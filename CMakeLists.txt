@@ -35,6 +35,8 @@ if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.13)
 cmake_policy(SET CMP0077 NEW)
 endif()
 
+include_directories("/usr/include/tcl")
+
 project(OpenROAD VERSION 0.9.0
   LANGUAGES CXX
 )
