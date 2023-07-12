@@ -1,5 +1,23 @@
 # Artificial Netlist Generator
 
+## About this fork
+
+This is forked from the original software at [/daeyeon22/artificial_netlist_generator](https://github.com/daeyeon22/artificial_netlist_generator)
+The only thing this fork add is a directory `docker` with a `docker` build file. 
+
+This should allow for reproducible builds without experiencing what I have been for the past two days, simply by 
+
+```console
+$ cd docker
+$ make docker
+```
+
+The resulting docker image is `artificial_netlist_generator:latest` and can be run with
+
+```console
+$ docker run -it artificial_netlist_generator:latest
+```
+
 ## Introduction
 The structural characteristics of a place and route (P&R) benchmark vary widly depending on the logic and synthesis method with target technologies. The structural characteristics affect the solution space of CAD algorithms (e.g., partitioning, placement, routing, etc), so insufficient number of P&R benchmarks may lead to the poor generalizability for unseen circuits. 
 
