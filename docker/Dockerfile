@@ -14,7 +14,7 @@ RUN git clone $REPO
 RUN mkdir -p artificial_netlist_generator/build
 WORKDIR /home/user/artificial_netlist_generator/build
 RUN git submodule update --init --recursive
-RUN cmake CMakeLists.txt
+RUN cmake ..
 RUN make
 USER root
 RUN make install
