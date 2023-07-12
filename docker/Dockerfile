@@ -10,9 +10,13 @@ USER user
 WORKDIR /home/user
 # ENV REPO="https://github.com/daeyeon22/artificial_netlist_generator.git"
 ENV REPO="https://github.com/tbrugere/artificial_netlist_generator.git"
-ENV 
 RUN git clone $REPO
-WORKDIR /home/user/artificial_netlist_generator
+RUN mkdir -p artificial_netlist_generator/build
+WORKDIR /home/user/artificial_netlist_generator/build
 RUN git submodule update --init --recursive
 RUN cmake CMakeLists.txt
 RUN make
+USER root
+RUN make install
+USER user
+WORKDIR /home/user
